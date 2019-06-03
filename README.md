@@ -1,6 +1,8 @@
-# Letsencrypt automagically 🌈
+# Letsencrypt automagically with docker 🌈
 
-Starts nginx listening on port `80` and `443` together with certbot which renews the certificates which can get validated against the `.well-known`. Don't forget to shut down other services listening on port `80` and `443`.
+Based on <https://hub.docker.com/r/kvaps/letsencrypt-webroot> and uses the [letsencrypt webroot method](https://certbot.eff.org/docs/using.html#webroot). Starts a `nginx` docker container listening on port `80` and `443`. Don't forget to shut down other services listening on those.
+
+TODO: Don't need to listen on 443
 
 ## Example usage
 
