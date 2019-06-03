@@ -16,9 +16,13 @@ HOSTNAME='my-domain.com' docker-compose up --build
 
 ## Use with docker-machine
 
+TODO: Include how to setup docker-machine
+
 ```shell
 docker-machine ls
 ```
+
+_Set MACHINE_NAME var found in list_
 
 ```shell
 eval $(docker-machine env "$MACHINE_NAME")
