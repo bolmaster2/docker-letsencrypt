@@ -13,7 +13,6 @@ services:
       - /letsencrypt/html:/tmp/letsencrypt
     ports:
       - 80:80
-      - 443:443
   letsencrypt:
     image: kvaps/letsencrypt-webroot
     volumes:
@@ -25,4 +24,4 @@ services:
       - DOMAINS=${HOSTNAME}
       - EMAIL=${EMAIL}
       - WEBROOT_PATH=/tmp/letsencrypt
-      - STAGING=1
+      - STAGING=0
