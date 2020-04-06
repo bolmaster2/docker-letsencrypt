@@ -43,10 +43,23 @@ _Beware: all commands after this will be executed on the remote host!_
 eval $(docker-machine env "$MACHINE_NAME")
 ```
 
-_Don't forget to shutdown other services listening on port 80 before!_
+Don't forget to shutdown other services listening on port 80 before! Something like this:
+
+```shell
+# Find out which container is the webserver
+docker ps
+# Stop it temporarily
+docker stop $CONTAINER_ID
+```
 
 ```shell
 HOSTNAME="example.com" docker-compose up
+```
+
+When the script says all is good. Restart the original webserver: (only when renewing certs)
+
+```shell
+docker start $CONTAINER_ID
 ```
 
 Now there's a certificate and key here:
